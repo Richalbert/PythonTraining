@@ -70,6 +70,11 @@ valeur = tkinter.DoubleVar()
 echelle = tkinter.Scale(app, variable=valeur)
 echelle.pack()
 
+
+# Ajout d'une boite de dialogue
+
+
+
 app.config(menu=mainmenu)
 
 # Rendre la fenetre active
