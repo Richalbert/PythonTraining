@@ -9,6 +9,7 @@
 
 
 import tkinter
+#from tkinter import *
 
 # Creation de la fenetre principale avec un menu
 app = tkinter.Tk()
@@ -41,6 +42,33 @@ menu3.add_command(label='Info')
 mainmenu.add_cascade(label='Fichier', menu=menu1)
 mainmenu.add_cascade(label='Edition', menu=menu2)
 mainmenu.add_cascade(label='Outils', menu=menu3)
+
+
+# Ajout d'une case a cocher
+bouton = tkinter.Checkbutton(app, text='Confirmer')
+bouton.pack()
+
+# Ajout d'une liste
+liste = tkinter.Listbox(app)
+liste.insert(1, "Python")
+liste.insert(2, "Html")
+liste.insert(3, "C")
+liste.insert(4, "C++")
+liste.insert(5, "Java")
+liste.pack()
+
+# Ajout d'un bouton
+bouton1 = tkinter.Button(app, text='Annuler')
+bouton1.pack(side=tkinter.LEFT, padx=5, pady=5)
+
+# Ajout d'un spinbox
+spinbox = tkinter.Spinbox(app, from_=0, to=10)
+spinbox.pack()
+
+# Ajout d'un curseur
+valeur = tkinter.DoubleVar()
+echelle = tkinter.Scale(app, variable=valeur)
+echelle.pack()
 
 app.config(menu=mainmenu)
 
