@@ -10,25 +10,41 @@
 
 import tkinter
 
-# Creation de la fenetre principale
-fenetre = tkinter.Tk()
+# Creation de la fenetre principale avec un menu
+app = tkinter.Tk()
 
 # Un titre pour la fenetre
-fenetre.title('Fenetre principale')
+app.title('Mon application')
 
 # Position de la fenetre "largeurxhauteu+x+y"
-fenetre.geometry("640x480+0+0")
+app.geometry("640x480+20+20")
 
-# # Les dimensions de la fenetre
-# largeur = 440
-# hauteur = 280
-# fenetre.minsize(largeur, hauteur)
-# fenetre.maxsize(largeur+200, hauteur+200)
+# Ajout d'un widget Menu
+mainmenu = tkinter.Menu(app)
 
-# Pour bloquer le redimensionnement de la fenetre ou pas
-fenetre.resizable(width=False, height=True)
+# Creation de 2 menus File et Edit
+menu1 = tkinter.Menu(mainmenu)
+menu1.add_command(label='Nouveau')
+menu1.add_command(label='Ouvrir')
+menu1.add_command(label='Enregistrer')
+
+menu2 = tkinter.Menu(mainmenu)
+menu2.add_command(label='Couper')
+menu2.add_command(label='Copier')
+menu2.add_command(label='Coller')
+
+menu3 = tkinter.Menu(mainmenu)
+menu3.add_command(label='Afficher')
+menu3.add_command(label='Zoomer')
+menu3.add_command(label='Info')
+
+mainmenu.add_cascade(label='Fichier', menu=menu1)
+mainmenu.add_cascade(label='Edition', menu=menu2)
+mainmenu.add_cascade(label='Outils', menu=menu3)
+
+app.config(menu=mainmenu)
 
 # Rendre la fenetre active
-fenetre.mainloop()
+app.mainloop()
 
 
